@@ -18,10 +18,10 @@ const int MOTORS_PER_SIDE = 2; // Motors per side of drive
 const int  L_CHASSIS_PORTS[MOTORS_PER_SIDE] = {16, -11}; // Ports, the first number will be used for sensing
 const int  R_CHASSIS_PORTS[MOTORS_PER_SIDE] = {10, -4}; // Ports, the first number will be used for sensing
 
-// IMU Port
-//#define GYRO_PORT 19
-//#define TILTER 'B'
-//#define MOGO 'A'
+//IMU Port
+#define GYRO_PORT 19
+#define TILTER 'B'
+#define MOGO 'A'
 
 
 

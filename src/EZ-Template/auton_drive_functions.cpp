@@ -18,28 +18,22 @@ void set_motors_stop() {
 void set_motors_drive(int voltage) {
     l_motor.move_voltage(voltage);
     l2_motor.move_voltage(voltage);
-    l3_motor.move_voltage(voltage);
     r_motor.move_voltage(-voltage);
     r2_motor.move_voltage(-voltage);
-    r3_motor.move_voltage(-voltage);
 }
 
 void set_motors_left(int voltage) {
     l_motor.move_voltage(-voltage);
     l2_motor.move_voltage(-voltage);
-    l3_motor.move_voltage(-voltage);
     r_motor.move_voltage(-voltage);
     r2_motor.move_voltage(-voltage);
-    r3_motor.move_voltage(-voltage);
 }
 
 void set_motors_right(int voltage) {
     l_motor.move_voltage(voltage);
     l2_motor.move_voltage(voltage);
-    l3_motor.move_voltage(voltage);
     r_motor.move_voltage(voltage);
     r2_motor.move_voltage(voltage);
-    r3_motor.move_voltage(voltage);
 }
 
 void gyro_turning(float left_range, float right_range, bool negative, bool direction) {
@@ -111,7 +105,7 @@ void skills_auton() {
     while (gyro.get_heading() < 37 || gyro.get_heading() > 39) {
         l_motor.move_voltage(-6000);
         l2_motor.move_voltage(-6000);
-        l3_motor.move_voltage(-6000);
+
     }
     pros::delay(50);
     set_motors_drive(0);

@@ -13,8 +13,6 @@ extern pros::Motor l_motor;
 extern pros::Motor r_motor;
 extern pros::Motor l2_motor;
 extern pros::Motor r2_motor;
-extern pros::Motor l3_motor;
-extern pros::Motor r3_motor;
 extern pros::Imu gyro;
 extern pros::ADIDigitalOut tilterClamp;
 extern pros::ADIDigitalOut mogoClamp;
