@@ -13,9 +13,7 @@ extern pros::Motor l_motor;
 extern pros::Motor r_motor;
 extern pros::Motor l2_motor;
 extern pros::Motor r2_motor;
-extern pros::Imu gyro;
-extern pros::ADIDigitalOut tilterClamp;
-extern pros::ADIDigitalOut mogoClamp;
+//extern pros::Imu gyro;
 void chassis_motor_init();
 
 void set_drive_brake(pros::motor_brake_mode_e_t input);

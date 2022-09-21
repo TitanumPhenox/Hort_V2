@@ -9,13 +9,13 @@ void disable_all_tasks()
 {
 }
 
-void tare_sensors()
+/*void tare_sensors()
 {
     zero_mogo();
 	zero_tilter();
 	zero_lift();
 }
-
+*/
 /**
  * A callback function for LLEMU's center button.
  *
@@ -125,8 +125,8 @@ void initialize()
 	}
 
 	chassis_motor_init();
-	tare_sensors();
-    mogoClamp.set_value(false);
+	//tare_sensors();
+    //mogoClamp.set_value(false);
 }
 
 /**
@@ -171,8 +171,8 @@ void autonomous()
 	set_drive_brake(MOTOR_BRAKE_BRAKE);
 	// drive_pid.resume();
 	//pros::c::motor_set_brake_mode(mogo_port, MOTOR_BRAKE_HOLD);
-	pros::c::motor_set_brake_mode(lift_port, MOTOR_BRAKE_HOLD);
-	pros::c::motor_set_brake_mode(tilter_port, MOTOR_BRAKE_HOLD);
+	//pros::c::motor_set_brake_mode(lift_port, MOTOR_BRAKE_HOLD);
+	//pros::c::motor_set_brake_mode(tilter_port, MOTOR_BRAKE_HOLD);
 	auto_select(true);
 }
 
@@ -194,17 +194,13 @@ void opcontrol()
 	// drive_pid.suspend();
 	// reset_drive_sensor();
 	set_drive_brake(MOTOR_BRAKE_HOLD); // This is preference to what you like to drive on
-	pros::c::motor_set_brake_mode(lift_port, MOTOR_BRAKE_HOLD);
-	pros::c::motor_set_brake_mode(tilter_port, MOTOR_BRAKE_HOLD);
+	//pros::c::motor_set_brake_mode(lift_port, MOTOR_BRAKE_HOLD);
+	//pros::c::motor_set_brake_mode(tilter_port, MOTOR_BRAKE_HOLD);
 	//pros::c::motor_set_brake_mode(mogo_port, MOTOR_BRAKE_HOLD);
 
 	while (true)
 	{
 		arcadeDrive();
-		takeintake();
-		mogo_control_manual();
-		tilter_control_manuel();
-		lift_control_manuel();
 		pros::delay(DELAY_TIME);
 	}
 }

@@ -31,13 +31,13 @@ bool is_reversed(int input)
 	return false;
 }
 
-pros::Motor l_motor(abs(L_CHASSIS_PORTS[0]), MOTOR_GEARSET_18, is_reversed(L_CHASSIS_PORTS[0]), MOTOR_ENCODER_COUNTS);
-pros::Motor r_motor(abs(R_CHASSIS_PORTS[0]), MOTOR_GEARSET_18, is_reversed(R_CHASSIS_PORTS[0]), MOTOR_ENCODER_COUNTS);
-pros::Motor l2_motor(abs(L_CHASSIS_PORTS[1]), MOTOR_GEARSET_18, is_reversed(L_CHASSIS_PORTS[1]), MOTOR_ENCODER_COUNTS);
-pros::Motor r2_motor(abs(R_CHASSIS_PORTS[1]), MOTOR_GEARSET_18, is_reversed(R_CHASSIS_PORTS[1]), MOTOR_ENCODER_COUNTS);
-pros::Imu gyro(GYRO_PORT);
-pros::ADIDigitalOut tilterClamp(TILTER);
-pros::ADIDigitalOut mogoClamp(MOGO);
+pros::Motor l_motor(abs(L_CHASSIS_PORTS[0]), MOTOR_GEARSET_36, is_reversed(L_CHASSIS_PORTS[0]), MOTOR_ENCODER_COUNTS);
+pros::Motor r_motor(abs(R_CHASSIS_PORTS[0]), MOTOR_GEARSET_36, is_reversed(R_CHASSIS_PORTS[0]), MOTOR_ENCODER_COUNTS);
+pros::Motor l2_motor(abs(L_CHASSIS_PORTS[1]), MOTOR_GEARSET_36, is_reversed(L_CHASSIS_PORTS[1]), MOTOR_ENCODER_COUNTS);
+pros::Motor r2_motor(abs(R_CHASSIS_PORTS[1]), MOTOR_GEARSET_36, is_reversed(R_CHASSIS_PORTS[1]), MOTOR_ENCODER_COUNTS);
+//pros::Imu gyro(GYRO_PORT);
+//pros::ADIDigitalOut tilterClamp(TILTER);
+//pros::ADIDigitalOut mogoClamp(MOGO);
 
 // Initializes pros reversing
 void chassis_motor_init()
@@ -59,7 +59,7 @@ void set_drive_brake(pros::motor_brake_mode_e_t input)
 	}
 }
 
-bool imu_calibrate()
+/*bool imu_calibrate()
 {
 	gyro.reset();
 	int time = pros::millis();
@@ -80,3 +80,4 @@ bool imu_calibrate()
 	printf("IMU is done calibrating (took %d ms)\n", iter);
 	return true;
 }
+*/

@@ -3,7 +3,7 @@ This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
-
+/**
 #include "main.h"
 #include <string>
 
@@ -18,22 +18,28 @@ void set_motors_stop() {
 void set_motors_drive(int voltage) {
     l_motor.move_voltage(voltage);
     l2_motor.move_voltage(voltage);
+    l3_motor.move_voltage(voltage);
     r_motor.move_voltage(-voltage);
     r2_motor.move_voltage(-voltage);
+    r3_motor.move_voltage(-voltage);
 }
 
 void set_motors_left(int voltage) {
     l_motor.move_voltage(-voltage);
     l2_motor.move_voltage(-voltage);
+    l3_motor.move_voltage(-voltage);
     r_motor.move_voltage(-voltage);
     r2_motor.move_voltage(-voltage);
+    r3_motor.move_voltage(-voltage);
 }
 
 void set_motors_right(int voltage) {
     l_motor.move_voltage(voltage);
     l2_motor.move_voltage(voltage);
+    l3_motor.move_voltage(voltage);
     r_motor.move_voltage(voltage);
     r2_motor.move_voltage(voltage);
+    r3_motor.move_voltage(voltage);
 }
 
 void gyro_turning(float left_range, float right_range, bool negative, bool direction) {
@@ -56,7 +62,7 @@ void gyro_turning(float left_range, float right_range, bool negative, bool direc
         for (int i = 1; gyro.get_heading() < left_range || gyro.get_heading() > right_range; i++) {
             set_motors_left((12000 - (i * 300)) * posneg);
         }
-         */
+
     } else {
         while (gyro.get_heading() < (left_range - 60) || gyro.get_heading() > (right_range - 60)) {
             set_motors_right(12000 * posneg);
@@ -70,7 +76,7 @@ void gyro_turning(float left_range, float right_range, bool negative, bool direc
         for (int i = 1; gyro.get_heading() < left_range || gyro.get_heading() > right_range; i++) {
             set_motors_right((12000 - (i * 300)) * posneg);
         }
-         */
+
     }
 };
 
@@ -105,7 +111,7 @@ void skills_auton() {
     while (gyro.get_heading() < 37 || gyro.get_heading() > 39) {
         l_motor.move_voltage(-6000);
         l2_motor.move_voltage(-6000);
-
+        l3_motor.move_voltage(-6000);
     }
     pros::delay(50);
     set_motors_drive(0);
@@ -327,7 +333,7 @@ void skills_auton() {
     set_motors_drive(-12000);
     pros::delay(1500);
     set_motors_drive(0);
-     */
+
 }
 
 void neutral_auton() {
@@ -393,3 +399,4 @@ void win_point() {
     pros::delay(500);
     set_motors_drive(0);
 }
+**/
